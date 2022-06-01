@@ -79,110 +79,86 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func configure() {
         models.append(Section(title: "General", options: [
-            .switchCell(model: SettingsSwitchOption(title: "Авиарежим", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .systemOrange, handler: {
-                
-                print("Нажата ячейка: Авиарежим")
+            .switchCell(model: SettingsSwitchOption(title: "Авиарежим", icon: UIImage(image: .airplane), iconBackgroundColor: .systemOrange, handler: {
+
             }, isOn: false)),
-            .staticCell(model: SettingsOption(title: "Wi-Fi", icon: UIImage(systemName: "wifi"), iconBackgroundColor: .systemBlue) {
+            .staticCell(model: SettingsOption(title: "Wi-Fi", icon: UIImage(image: .wifi), iconBackgroundColor: .systemBlue) {
                 
-                print("Нажата ячейка: Wi-Fi")
             }),
-            .staticCell(model: SettingsOption(title: "Bluetooth", icon: UIImage(named: "icons8-bluetooth-30"), iconBackgroundColor: .systemBlue) {
+            .staticCell(model: SettingsOption(title: "Bluetooth", icon: UIImage(image: .bluetooth), iconBackgroundColor: .systemBlue) {
                 
-                print("Нажата ячейка: Bluetooth")
             }),
-            .staticCell(model: SettingsOption(title: "Сотовая связь", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconBackgroundColor: .systemGreen) {
+            .staticCell(model: SettingsOption(title: "Сотовая связь", icon: UIImage(image: .antenna), iconBackgroundColor: .systemGreen) {
                 
-                print("Нажата ячейка: Сотовая связь")
             }),
-            .staticCell(model: SettingsOption(title: "Режим модема", icon: UIImage(systemName: "personalhotspot"), iconBackgroundColor: .systemGreen) {
+            .staticCell(model: SettingsOption(title: "Режим модема", icon: UIImage(image: .modem), iconBackgroundColor: .systemGreen) {
                 
-                print("Нажата ячейка: Режим модема")
             }),
-            .switchCell(model: SettingsSwitchOption(title: "VPN", icon: UIImage(named: "icons8-vpn-status-bar-icon-50"), iconBackgroundColor: .systemBlue, handler: {
+            .switchCell(model: SettingsSwitchOption(title: "VPN", icon: UIImage(image: .vpn), iconBackgroundColor: .systemBlue, handler: {
                 
-                print("Нажата ячейка: VPN")
             }, isOn: false))
         ]))
         
         models.append(Section(title: "Information", options: [
-            .staticCell(model: SettingsOption(title: "Уведомления", icon: UIImage(named: "icons8-notification-50"), iconBackgroundColor: .systemRed) {
+            .staticCell(model: SettingsOption(title: "Уведомления", icon: UIImage(image: .notification), iconBackgroundColor: .systemRed) {
                 
-                print("Нажата ячейка: Уведомления")
             }),
-            .staticCell(model: SettingsOption(title: "Звуки, тактильные сигналы", icon: UIImage(systemName: "speaker.wave.3"), iconBackgroundColor: .systemPink) {
+            .staticCell(model: SettingsOption(title: "Звуки, тактильные сигналы", icon: UIImage(image: .speaker), iconBackgroundColor: .systemPink) {
                 
-                print("Нажата ячейка: Звуки, тактильные сигналы")
             }),
-            .staticCell(model: SettingsOption(title: "Не беспокоить", icon: UIImage(systemName: "moon.fill"), iconBackgroundColor: .systemPurple) {
+            .staticCell(model: SettingsOption(title: "Не беспокоить", icon: UIImage(image: .moonFill), iconBackgroundColor: .systemPurple) {
                 
-                print("Нажата ячейка: Не беспокоить")
             }),
-            .staticCell(model: SettingsOption(title: "Экранное время", icon: UIImage(systemName: "hourglass"), iconBackgroundColor: .systemPurple) {
+            .staticCell(model: SettingsOption(title: "Экранное время", icon: UIImage(image: .screenTime), iconBackgroundColor: .systemPurple) {
                 
-                print("Нажата ячейка: Экранное время")
             })
         ]))
         
         models.append(Section(title: "General", options: [
-            .staticCell(model: SettingsOption(title: "Основные", icon: UIImage(named: "icons8-settings-100"), iconBackgroundColor: .lightGray) {
+            .staticCell(model: SettingsOption(title: "Основные", icon: UIImage(image: .settings), iconBackgroundColor: .lightGray) {
                 
-                print("Нажата ячейка: Основные")
             }),
-            .staticCell(model: SettingsOption(title: "Пункт управления", icon: UIImage(systemName: "switch.2"), iconBackgroundColor: .lightGray) {
+            .staticCell(model: SettingsOption(title: "Пункт управления", icon: UIImage(image: .switchScreen), iconBackgroundColor: .lightGray) {
                 
-                print("Нажата ячейка: Пункт управления")
             }),
-            .staticCell(model: SettingsOption(title: "Экран и яркость", icon: UIImage(systemName: "textformat.size"), iconBackgroundColor: .systemBlue) {
+            .staticCell(model: SettingsOption(title: "Экран и яркость", icon: UIImage(image: .screenFormat), iconBackgroundColor: .systemBlue) {
                 
-                print("Нажата ячейка: Экран и яркость")
             }),
-            .staticCell(model: SettingsOption(title: "Экран «Домой»", icon: UIImage(named: "icons8-desktop-mac-40"), iconBackgroundColor: .systemBlue) {
+            .staticCell(model: SettingsOption(title: "Экран «Домой»", icon: UIImage(image: .screenHome), iconBackgroundColor: .systemBlue) {
                 
-                print("Нажата ячейка: Экран «Домой»")
             }),
-            .staticCell(model: SettingsOption(title: "Универсальный доступ", icon: UIImage(systemName: "figure.wave.circle"), iconBackgroundColor: .systemBlue) {
+            .staticCell(model: SettingsOption(title: "Универсальный доступ", icon: UIImage(image: .universalAccess), iconBackgroundColor: .systemBlue) {
                 
-                print("Нажата ячейка: Универсальный доступ")
             }),
-            .staticCell(model: SettingsOption(title: "Обои", icon: UIImage(systemName: "cloud"), iconBackgroundColor: .systemMint) {
+            .staticCell(model: SettingsOption(title: "Обои", icon: UIImage(image: .wallpaper), iconBackgroundColor: .systemMint) {
                 
-                print("Нажата ячейка: Обои")
             }),
-            .staticCell(model: SettingsOption(title: "Siri и Поиск", icon: UIImage(named: "icons8-siri-64"), iconBackgroundColor: .black) {
+            .staticCell(model: SettingsOption(title: "Siri и Поиск", icon: UIImage(image: .siri), iconBackgroundColor: .black) {
                 
-                print("Нажата ячейка: Siri и Поиск")
             }),
-            .staticCell(model: SettingsOption(title: "Face ID и код-пароль", icon: UIImage(named: "icons8-face-id-30"), iconBackgroundColor: .systemGreen) {
+            .staticCell(model: SettingsOption(title: "Face ID и код-пароль", icon: UIImage(image: .faceId), iconBackgroundColor: .systemGreen) {
                 
-                print("Нажата ячейка: Face ID и код-пароль")
             }),
-            .staticCell(model: SettingsOption(title: "Экстренный вызов - SOS", icon: UIImage(named: "icons8-sos-button-48"), iconBackgroundColor: .systemRed) {
+            .staticCell(model: SettingsOption(title: "Экстренный вызов - SOS", icon: UIImage(image: .sos), iconBackgroundColor: .systemRed) {
                 
-                print("Нажата ячейка: Экстренный вызов - SOS")
             }),
-            .staticCell(model: SettingsOption(title: "Уведомление о контакте", icon: UIImage(named: "icons8-inactive-state-80"), iconBackgroundColor: .white) {
+            .staticCell(model: SettingsOption(title: "Уведомление о контакте", icon: UIImage(image: .notificationContact), iconBackgroundColor: .white) {
                 
-                print("Нажата ячейка: Уведомление о контакте")
             }),
-            .staticCell(model: SettingsOption(title: "Аккумулятор", icon: UIImage(systemName: "battery.100"), iconBackgroundColor: .systemGreen) {
+            .staticCell(model: SettingsOption(title: "Аккумулятор", icon: UIImage(image: .battery), iconBackgroundColor: .systemGreen) {
                 
-                print("Нажата ячейка: Аккумулятор")
             }),
-            .staticCell(model: SettingsOption(title: "Конфидециальность", icon: UIImage(named: "icons8-stop-64"), iconBackgroundColor: .systemBlue) {
+            .staticCell(model: SettingsOption(title: "Конфидециальность", icon: UIImage(image: .privacy), iconBackgroundColor: .systemBlue) {
                 
-                print("Нажата ячейка: Конфидециальность")
             })
         ]))
         
         models.append(Section(title: "Information", options: [
-            .staticCell(model: SettingsOption(title: "App Store", icon: UIImage(named: "icons8-app-store-48"), iconBackgroundColor: .white) {
+            .staticCell(model: SettingsOption(title: "App Store", icon: UIImage(image: .appStore), iconBackgroundColor: .white) {
                 
-                print("Нажата ячейка: App Store")
             }),
-            .staticCell(model: SettingsOption(title: "Wallet и Apple Pay", icon: UIImage(named: "icons8-wallet-48"), iconBackgroundColor: .white) {
+            .staticCell(model: SettingsOption(title: "Wallet и Apple Pay", icon: UIImage(image: .wallet), iconBackgroundColor: .white) {
                 
-                print("Нажата ячейка: Wallet и Apple Pay")
             })
         ]))
     }
@@ -235,10 +211,44 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         switch type.self {
         case .staticCell(let model):
+            print("Нажата ячейка \(model.title)")
             model.handler()
         case .switchCell(let model):
+            print("Нажата ячейка \(model.title)")
             model.handler()
         }
     }
 }
 
+extension UIImage {
+    convenience init?(image: Icon) {
+        self.init(named: image.rawValue)
+    }
+
+    enum Icon: String {
+        case airplane = "icons8-airplane-mode-on-50"
+        case wifi = "icons8-wi-fi-30"
+        case bluetooth = "icons8-bluetooth-30"
+        case antenna = "icons8-antenna-65"
+        case modem = "icons8-personal-hotspot-50"
+        case vpn = "icons8-vpn-status-bar-icon-50"
+        case notification = "icons8-notification-50"
+        case speaker = "icons8-speaker-60"
+        case moonFill = "icons8-moon-symbol-60"
+        case screenTime = "icons8-hourglass-48"
+        case settings = "icons8-settings-100"
+        case switchScreen = "icons8-switches-50"
+        case screenFormat = "icons8-font-size-48"
+        case screenHome = "icons8-desktop-mac-40"
+        case universalAccess = "icons8-web-accessibility-50"
+        case wallpaper = "icons8-geometric-flowers-60"
+        case siri = "icons8-siri-64"
+        case faceId = "icons8-face-id-30"
+        case sos = "icons8-sos-button-48"
+        case notificationContact = "icons8-inactive-state-80"
+        case battery = "icons8-empty-battery-50"
+        case privacy = "icons8-stop-64"
+        case appStore = "icons8-app-store-48"
+        case wallet = "icons8-wallet-48"
+    }
+}

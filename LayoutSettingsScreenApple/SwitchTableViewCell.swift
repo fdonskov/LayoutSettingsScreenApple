@@ -43,14 +43,9 @@ class SwitchTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
-        contentView.addSubview(iconContainer)
-        contentView.addSubview(mySwitch)
-        iconContainer.addSubview(iconImageView)
-        contentView.clipsToBounds = true
         
-        // Создание стрелки для перехода в конце ячейки
-        accessoryType = .none
+        addSubviews()
+        configureCell()
     }
     
     required init?(coder: NSCoder) {
@@ -83,12 +78,17 @@ class SwitchTableViewCell: UITableViewCell {
         )
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        iconImageView.image = nil
-        label.text = nil
-        iconContainer.backgroundColor = nil
-        mySwitch.isOn = false
+    private func addSubviews() {
+        contentView.addSubview(label)
+        contentView.addSubview(iconContainer)
+        contentView.addSubview(mySwitch)
+        iconContainer.addSubview(iconImageView)
+        contentView.clipsToBounds = true
+    }
+    
+    private func configureCell() {
+        // Создание стрелки для перехода в конце ячейки
+        accessoryType = .none
     }
     
     // Метод - Способ настройки ячейки

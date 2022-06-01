@@ -31,20 +31,14 @@ class SettingTableViewCell: UITableViewCell {
         label.numberOfLines = 1
         return label
     }()
-    
 
     // MARK: Methods
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(label)
-        contentView.addSubview(iconContainer)
-        iconContainer.addSubview(iconImageView)
-        contentView.clipsToBounds = true
         
-        // Создание стрелки для перехода в конце ячейки
-        accessoryType = .disclosureIndicator
-        
+        addSubviews()
+        configureCell()
     }
     
     required init?(coder: NSCoder) {
@@ -68,11 +62,16 @@ class SettingTableViewCell: UITableViewCell {
         )
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        iconImageView.image = nil
-        label.text = nil
-        iconContainer.backgroundColor = nil
+    private func addSubviews() {
+        contentView.addSubview(label)
+        contentView.addSubview(iconContainer)
+        iconContainer.addSubview(iconImageView)
+        contentView.clipsToBounds = true
+    }
+    
+    private func configureCell() {
+        // Создание стрелки для перехода в конце ячейки
+        accessoryType = .disclosureIndicator
     }
     
     // Метод - Способ настройки ячейки
